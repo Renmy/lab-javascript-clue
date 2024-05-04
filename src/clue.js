@@ -114,7 +114,13 @@ function pickMystery() {
 // ITERATION 3
 
 function revealMystery(mistery) {
-    return `${mistery.suspect.firstName} ${mistery.suspect.lastName} killed Mr. Boddy using the ${mistery.weapon.name} in the ${mistery.room.name}!`;
+    //first solution
+    //return `${mistery.suspect.firstName} ${mistery.suspect.lastName} killed Mr. Boddy using the ${mistery.weapon.name} in the ${mistery.room.name}!`;
+
+    //trying destructuring
+    const { suspect, room, weapon } = mistery;
+    const { firstName, lastName }= suspect;
+    return `${firstName} ${lastName} killed Mr. Boddy using the ${weapon.name} in the ${room.name}!`; 
 }
 
 
